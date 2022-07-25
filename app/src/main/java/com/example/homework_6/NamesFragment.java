@@ -49,7 +49,7 @@ public class NamesFragment extends Fragment {
             TextView tv = new TextView(getContext());
             tv.setTextSize(30f);
             Notes note = notes.get(i);
-            tv.setText(note.getNameNote());
+            tv.setText((String)note.getNameNote());
             ((LinearLayout) view).addView(tv);
 
             tv.setOnClickListener(new View.OnClickListener() {
