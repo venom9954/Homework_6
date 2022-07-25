@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -13,10 +15,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState == null) {
-            NamesFragment namesFragment = new NamesFragment();
+            NamesFragment namesFragment = NamesFragment.newInstance();
             getSupportFragmentManager().beginTransaction().replace(R.id.names, namesFragment).commit();
             if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                TextFragment textFragment = new TextFragment();
+                Notes defaultNotes = new Notes("Пустая заметка", "Введите описание заметки", "nn.nn.nnnn");
+                TextFragment textFragment = TextFragment.newInstance(defaultNotes);
                 getSupportFragmentManager().beginTransaction().replace(R.id.text_fragment,textFragment).commit();
             }
         }
