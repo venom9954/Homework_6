@@ -17,7 +17,10 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"/>
+        android:layout_height="?actionBarSize"
+        app:title="Заметки"
+        app:titleTextColor="#AAFFFFFF"
+        android:background="@color/teal_700"/>
 
     <FrameLayout
         android:id="@+id/names"
