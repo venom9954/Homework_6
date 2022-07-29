@@ -1,10 +1,15 @@
 package com.example.homework_6;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
+import androidx.appcompat.widget.Toolbar;
+
 
 import java.util.ArrayList;
 
@@ -24,7 +29,15 @@ public class MainActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.text_fragment,textFragment).commit();
             }
         }
+        Toolbar myToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
+
+        DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, myToolbar, R.string.burger_open, R.string.burger_close );
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

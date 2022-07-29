@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Homework_6</string>
+    <string name = "burger_open">burger open</string>
+    <string name = "burger_close">burger close</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="about">about</string>
