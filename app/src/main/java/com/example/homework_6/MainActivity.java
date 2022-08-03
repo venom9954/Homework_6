@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
@@ -53,8 +55,17 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
                     case (R.id.action_close):{
-                        finish();
-                        Toast.makeText(getApplicationContext(), "Заметки закрыты", Toast.LENGTH_LONG).show();
+
+                        new AlertDialog.Builder(MainActivity.this)
+                        .setMessage("Закрыть приложение?")
+                        .setPositiveButton("Да", (dialogInterface, which) -> {
+                            finish();
+                            Toast.makeText(MainActivity.this, "Заметки закрыты", Toast.LENGTH_LONG).show();
+                        })
+                        .setNegativeButton("Нет", (dialogInterface, which) -> {
+                            Toast.makeText(MainActivity.this, "На нет и суда нет", Toast.LENGTH_LONG).show();
+                        }).show();
+
                         return true;
                     }
                 }
