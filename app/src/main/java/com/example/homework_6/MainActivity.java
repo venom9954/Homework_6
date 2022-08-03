@@ -10,6 +10,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     case (R.id.action_close):{
                         finish();
+                        Toast.makeText(getApplicationContext(), "Заметки закрыты", Toast.LENGTH_LONG).show();
                         return true;
                     }
                 }
